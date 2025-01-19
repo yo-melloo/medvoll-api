@@ -9,8 +9,8 @@ import med.voll.api.endereco.Endereco;
 
 @Table(name = "medicos")
 @Entity
-@Getter
-@NoArgsConstructor
+//@Getter --> não funcionou na minha máquina
+//@NoArgsConstructor --> não funcionou
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Medico {
@@ -28,6 +28,36 @@ public class Medico {
 
     @Embedded
     private Endereco endereco;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public Especialidade getEspecialidade() {
+        return especialidade;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public Medico(){}
 
     public Medico(DadosCadastroMedico dados) {
         this.nome = dados.nome();
