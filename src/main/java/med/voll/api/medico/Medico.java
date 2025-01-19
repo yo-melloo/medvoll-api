@@ -61,6 +61,10 @@ public class Medico {
         return endereco;
     }
 
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
     public Medico(){}
 
     public Medico(DadosCadastroMedico dados) {
