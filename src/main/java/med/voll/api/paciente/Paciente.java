@@ -7,9 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.endereco.Endereco;
 
-@Getter
+//@Getter --> Não funcionou
 @EqualsAndHashCode(of = "id")
-@NoArgsConstructor
+//@NoArgsConstructor --> Não funcionou
 @AllArgsConstructor
 @Entity(name = "Paciente")
 @Table(name = "pacientes")
@@ -26,6 +26,33 @@ public class Paciente {
 
     @Embedded
     private Endereco endereco;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public Paciente(){}
 
     public Paciente(DadosCadastroPaciente dados) {
         this.nome = dados.nome();
