@@ -16,7 +16,7 @@ import java.util.List;
 @Entity(name = "usuario")
 @Getter //--> não funcionou na minha máquina
 @NoArgsConstructor //--> não funcionou
-@AllArgsConstructor
+//@AllArgsConstructor // --> não funcionou
 @EqualsAndHashCode(of = "id")
 public class Usuario implements UserDetails {
 
@@ -30,6 +30,10 @@ public class Usuario implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+
+    public String getLogin() {
+        return login;
     }
 
     @Override
